@@ -5,30 +5,46 @@ edition = "2021"
 #author = "P CH"
 
 [dependencies]
-chrono = "0.4.23"
-# curl = {version = "0.4.44",features = ["http2"]}
-actix-web = "4.2.1"
 actix-files = "0.6.2"
+actix-governor = "0.4.0-beta.3"
+actix-web = "4.2.1"
+async-channel = "1.7.1"
+base64 = "0.21.0"
+chashmap = "2.2.2"
+chrono = "0.4.23"
+ctrlc = "3.2.3"
+deadpool = "0.9.5"
+deadpool-redis = "0.11.0"
+env_logger = "0.10.0"
+futures = "0.3.25"
+lazy_static = "1.4.0"
+log = "0.4"
+pcre2 = "0.2.3"
 qstring = "0.7.2"
+rand = "0.8.5"
+reqwest = {version = "0.11.13",features = ["socks","brotli","gzip","deflate"]}
 rust-crypto = "0.2.36"
 serde_json = "1.0.89"
 serde_yaml = "0.9.14"
 serde = {version = "1.0.147",features = ["derive"]}
-deadpool = "0.9.5"
-deadpool-redis = "0.11.0"
-async-channel = "1.7.1"
-futures = "0.3.25"
 tokio = { version = "1.22.0", features = ["full"] }
-pcre2 = "0.2.3"
-ctrlc = "3.2.3"
-rand = "0.8.5"
-actix-governor = "0.4.0-beta.3"
-base64 = "0.21.0"
 urlencoding = "2.1.2"
-lazy_static = "1.4.0"
-log = "0.4"
-env_logger = "0.10.0"
-reqwest = {version = "0.11.13",features = ["socks","brotli","gzip","deflate"]}
+# gRPC相关依赖
+hyper = { version = "0.14.23", features = ["full"] }
+hyper-openssl = "0.9.2"
+openssl = "0.10.45"
+hyper-socks2 = "0.7.0"
+hyper-proxy = "0.9.1"
+tower = "0.4.13"
+tower-service = "0.3.2"
+tonic = "0.8.3"
+tonic-reflection = "0.6.0"
+prost = "0.11.3"
+prost-types = "0.11.2"
+# -- END --
+
+[build-dependencies]
+tonic-build = "0.8.4"
 
 [profile.fast]
 inherits = "release"
